@@ -11,12 +11,21 @@ import time
 import os
 
 # Variables
-#url_subasta = input('Ingresar url: ')
-url_subasta = r'https://nookazon.com/product/1689860200/auctions?priceMin=0&priceMax=50000000&priceType=bells&orderBy=endtime-asc'
 minuto_ejecucion = 5
 
 # Código
 os.system('mode con: cols=50 lines=10')
+while True:
+    limpiar_consola()
+    print('\nSelección de productos: ')
+    print(' [1] Nook Miles Ticket')
+    selec = input('\nIngresar selección: ')
+    if selec == '1':
+        url_subasta = r'https://nookazon.com/product/1689860200/auctions?priceMin=0&priceMax=50000000&priceType=bells&orderBy=endtime-asc'
+        break
+    else:
+        mensaje(2, 'Ingresar una selección válida')
+        time.sleep(1)
 limpiar_consola()
 wd = configurar_wd()
 while True:
